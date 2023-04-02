@@ -1,0 +1,7 @@
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\bin\Debug\Mascota.exe
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\bin\Debug\Mascota.pdb
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\obj\Debug\Mascota.csproj.AssemblyReference.cache
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\obj\Debug\Mascota.csproj.SuggestedBindingRedirects.cache
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\obj\Debug\Mascota.csproj.CoreCompileInputs.cache
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\obj\Debug\Mascota.exe
+C:\Users\PABEL\RiderProjects\Mascota\Mascota\obj\Debug\Mascota.pdb
