@@ -16,16 +16,17 @@ namespace Mascota
       m2.mostrar();
       m3.mostrar();
       m4.mostrar();
-      // b) Verificar si existe el “Perro”, de raza “Pastor Alemán”.
-      if(m1.verificarPerro(m2, m3, m4, "pastorAleman"))
+      // SOBRECARGA A) Verificar si existe el “Perro”, de raza “Pastor Alemán”.
+      if(m1.verificar(m2, m3, m4, "pastorAleman"))
         Console.WriteLine("si existe");
       else
         Console.WriteLine("no exite");
-      // c) Cuántas mascotas de tipo “gato” existen.
-      Console.WriteLine(m1.macotaDeTipo(m2, m3, m4));
-      // d) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una
-      m3.verificar2mascotas(m4);      
-      
+      // SOBRECARGA B) Cuántas mascotas de tipo “gato” existen.
+      Console.WriteLine(m1.verificar(m2, m3, m4));
+      // SOBRECARGA C) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una
+      Console.WriteLine(m3/m4);
+      // SOBRECARGA d) Mostrar las mascotas de menor a mayor según edad
+      Console.WriteLine(m2 * m1);
     }
   }
 }

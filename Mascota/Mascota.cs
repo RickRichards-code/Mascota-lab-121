@@ -82,10 +82,10 @@ namespace Mascota
             Console.WriteLine("color: "+ color);
             Console.WriteLine("edad: "+ edad);
         }
-        // a) Verificar si existe el “Perro”, de raza “Pastor Alemán”.
-        public bool verificarPerro(Mascota b, Mascota c, Mascota d, String razaX)
+        // SOBRECARGA a) Verificar si existe el “Perro”, de raza “Pastor Alemán”.
+        public bool verificar(Mascota b, Mascota c, Mascota d, String razaX)
         {
-            Console.WriteLine("--- a) Verificar si existe el “Perro”, de raza “Pastor Alemán”. ---");
+            Console.WriteLine("---SOBRECARGA  A) Verificar si existe el “Perro”, de raza “Pastor Alemán”. ---");
             if (raza.Equals(razaX))
                 return true;
             else if (b.raza.Equals(razaX))
@@ -97,10 +97,10 @@ namespace Mascota
             else
                 return false;
         }
-        //b) Cuántas mascotas de tipo “gato” existen.
-        public int macotaDeTipo(Mascota b, Mascota c, Mascota d)
+        // SOBRECARGA b) Cuántas mascotas de tipo “gato” existen.
+        public int verificar(Mascota b, Mascota c, Mascota d)
         {
-            Console.WriteLine("--- b) Cuántas mascotas de tipo “gato” existen. ---");
+            Console.WriteLine("--- SOBRECARGA B) Cuántas mascotas de tipo “gato” existen. ---");
             Console.Write("ingrese un el tipo: ");
             String mascotaX = Console.ReadLine();
             return mascotaTipo(mascotaX) + b.mascotaTipo(mascotaX) + c.mascotaTipo(mascotaX) + d.mascotaTipo(mascotaX);
@@ -112,25 +112,59 @@ namespace Mascota
                 return 1;
             return 0;
         }
-        // d) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una.
-        public void verificar2mascotas(Mascota b)
+        // POO c) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una.
+        // public void verificar2mascotas(Mascota b)
+        // {
+        //     Console.WriteLine("--- d) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una. --- ");
+        //     if (nombre.Equals(b.nombre))
+        //     {
+        //         Console.WriteLine("-- mascota 1 --");
+        //         Console.WriteLine("nombre: "+nombre+" tipo: "+tipo);
+        //         Console.WriteLine("-- mascota 2 --");
+        //         Console.WriteLine("nombre: "+b.nombre+" tipo: "+b.tipo);
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("no son del mismo tipo");
+        //     }
+        // }
+        //SOBRECARGA c) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una.
+        public static String operator /(Mascota a, Mascota b)
         {
-            Console.WriteLine("--- d) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una. --- ");
-            if (nombre.Equals(b.nombre))
+            Console.WriteLine("--- SOBRECARGA C) Verificar si existen 2 mascotas con el mismo nombre y si existen imprimir de que tipo son cada una. --- ");
+            if (a.nombre.Equals(b.nombre))
             {
-                Console.WriteLine("-- mascota 1 --");
-                Console.WriteLine("nombre: "+nombre+" tipo: "+tipo);
-                Console.WriteLine("-- mascota 2 --");
-                Console.WriteLine("nombre: "+b.nombre+" tipo: "+b.tipo);
+                return ("-- mascota 1 -- \n " + "nombre: " + a.nombre + "\ntipo: " + a.tipo+"\n-- mascota 2 -- \n " + "nombre: " + b.nombre + "\ntipo: " + b.tipo);
+                // Console.WriteLine("-- mascota 1 --");
+                // Console.WriteLine("nombre: "+a.nombre+" tipo: "+a.tipo);
+                // Console.WriteLine("-- mascota 2 --");
+                // Console.WriteLine("nombre: "+b.nombre+" tipo: "+b.tipo);
             }
             else
             {
-                Console.WriteLine("no son del mismo tipo");
-            }
-                
+                return ("no son del mismo tipo");
+            }           
         }
-        
-            
+        // SOBRECARGA d) Mostrar las mascotas de menor a mayor según edad
+        public static String operator *(Mascota a, Mascota b)
+        {
+            Console.WriteLine("--- SOBRECARGA D) Mostrar las mascotas de menor a mayor según edad --- ");
+            if (a.edad > b.edad)
+            {
+                b.mostrar();
+                Console.WriteLine("menor");
+                a.mostrar();
+                return "mayor";
 
+            }
+            else
+            {
+                a.mostrar();
+                Console.WriteLine("menor");
+                b.mostrar();
+                return "mayor";
+            }            
+            
+        }
     }
 }
